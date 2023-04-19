@@ -13,7 +13,7 @@ class ApnaSpider(scrapy.Spider):
     def parse(self, response):
         jobs = response.xpath("//div[@class='JobCardList__Grid-sc-1v9ot9b-1 heAxPY']/div")
         for job in jobs:
-            title = job.xpath(".//div[@class='JobCard__JobHeading-sc-1j63e6z-0 jZWHjc']/h3/a/text()").get()
+            title = job.xpath(".//div[@class='JobCardList__Grid-sc-1v9ot9b-1 heAxPY']/div/div/div/h3/a/text()").get()
             location = job.xpath(".//div[@class='JobCard__JobDescription-sc-1j63e6z-1 bzkSml']/p[1]/text()").get()
             company = job.xpath(".//span[contains(@class, 'styles__JobOrganizationName')]/text()").get()
             salary = job.xpath(".//p[contains(text(), '₹')]/text()").get()
