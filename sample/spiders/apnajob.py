@@ -7,6 +7,11 @@ class ApnaSpider(scrapy.Spider):
     start_urls = ["https://apna.co/jobs"]
     page_count = 0
 
+    custom_settings = {
+        'FEED_FORMAT': 'json',
+        'FEED_URI': 'jobs.json'
+    }
+
     # Parse the start URL to extract job links
     def parse(self, response):
         # Extract job links from the response
