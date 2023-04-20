@@ -1,9 +1,8 @@
 import scrapy
 from scrapy import Selector
 
-
-class ApnaJobsSpider(scrapy.Spider):
-    name = "apna_jobs"
+class ApnaSpider(scrapy.Spider):
+    name = "apna"
     allowed_domains = ["apna.co"]
     start_urls = ["https://apna.co/jobs"]
     page_count = 0
